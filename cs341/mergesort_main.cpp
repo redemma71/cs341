@@ -1,6 +1,6 @@
 // Author: John Maslanka    Date:   13-Apr-2002, updated 2-Feb-2011
 // Installation: Hone PC with MS Visual C++ V 6.0
-// Rework Main and Sabitch mergesort example in Ch 13
+// Rework Main and Savitch mergesort example in Ch 13
 
 #include "stdafx.h"
 #include <iomanip>
@@ -10,7 +10,7 @@ using namespace std;
 int main () {  
 	// Introduction and data entry
 MergeSort a; 
-int i, n, x[100000];
+int i, n, x[100];
 //cout << "Enter the number of integers to be generated: ";
 cout << "enter the number of integers to be entered: ";
 cin >> n;

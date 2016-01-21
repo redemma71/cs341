@@ -1,5 +1,19 @@
 #include "stdafx.h"
 
+
+void MergeSort::mergesort(int data[], int n)
+{
+	int n1, n2;
+	if (n > 1)
+	{
+		n1 = n / 2;
+		n2 = n - n1;
+		mergesort(data, n1);
+		mergesort((data + n1), n2);
+		merge(data, n1, n2);
+	}
+}
+
 void MergeSort::merge(int data[], int n1, int n2)
 {
 	int *temp;
@@ -25,3 +39,5 @@ void MergeSort::merge(int data[], int n1, int n2)
 	delete[] temp;
 	// }
 }
+
+
