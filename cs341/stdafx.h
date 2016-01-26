@@ -10,7 +10,13 @@
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
+#include <string>
+#include <cmath>
+#include <ctime>
+#include <vector>
+#include <array>
 
 #include "MergeSort.h"
+#include "QuadraticFormula.h"
 
 using namespace std;

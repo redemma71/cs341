@@ -1,5 +1,9 @@
-#include "stdafx.h"
+o// Author: John Maslanka
+// Revised: Chad David Cover
+// Date: January 21, 2016
+// Version: 1
 
+#include "stdafx.h"
 
 void MergeSort::mergesort(int data[], int n)
 {
