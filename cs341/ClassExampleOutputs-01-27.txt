@@ -1,0 +1,23 @@
+G:\BU\BU CS341 Spring 2016\Classroom Examples>JM-tempsq-excpA
+Pre-Count of array elements is 1
+Pre-Count of array elements is 4
+Pre-Count of array elements is 25
+Pre-Count of array elements is 676
+Pre-Count of array elements is 458329
+Pre-Count of array elements is 3907958692
+Insufficient Heap resource.
+Press any key to continue . . .
+
+G:\BU\BU CS341 Spring 2016\Classroom Examples>array3
+Value in variable Arr points to the location 2562808
+First array is 0 2 6 12 20
+Value in variable Arr points to Heap location 2562808
+Location of i is 3800044
+Location of j is 3800036
+Reference to new Heap is 2588592
+New array is 0 2 6 12 20 30 42 56 72 90
+Value in variable Arr points to the location 2588592
+Location of i is 3800044
+Location of j is 3800036
+
+G:\BU\BU CS341 Spring 2016\Classroom Examples>
