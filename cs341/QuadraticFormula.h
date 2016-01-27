@@ -6,12 +6,13 @@ class QuadraticFormula {
 private:
 	double a, b, c;
 public:
-	bool checkA(int a);
-	// 2a
+	QuadraticFormula();
 	double twoA(double a);
 	double bSquare(double b);
 	double fourAC(double a, double c);
-	double numRoots(double bSquare, double fourAC);
+	int numRoots(double bSquare, double fourAC);
 	double oneRoot(double a, double b);
 	double* twoRoots(double twoA, double b, double bSquare, double fourAC);
+	double getCoefficient(char var);
+	double setCoefficient(char var, int num);
 };

@@ -7,32 +7,55 @@
 int main() {
 
 	// global variables
-	char coeffVar[] = { 'a','b','c' };
-	int coeff[3];
-	int n;
-	int var = 0;
+	char coeffVar[] = { 'a','b','c' }; // coefficient variable names
+	double coeff[3]; // to hold coefficient values
+	double n; // for numerical input
+	int var = 0; // to control input loop
+	
+	cout << "*******************************" << endl;
+	cout << "Fun with the Quadratic Formula!" << endl;
+	cout << "*******************************" << endl << endl;
 	
 	// prompt user for input
 	while (var < 3) {
-		cout << "Enter a non-0 integer for coefficient " << coeffVar[var] << ":" << endl;
-		cin >> n;
-		if (!cin.eof() && cin.good()) {
-			coeff[var] = n;
+		if (var == 0) {
+			cout << "Enter a number (except 0) for coefficient " << coeffVar[var] << ":" << endl;
+			cin >> n;
+			if (!cin.eof() && cin.good() && n != 0) {
+				coeff[var] = n;
+			}
+			else {
+				cout << "Sorry, your entry wasn't valid. Exiting" << endl;
+				return 0;
+			}
+		} else {
+			cout << "Enter a number for coefficient " << coeffVar[var] << ":" << endl;
+			cin >> n;
+			if (!cin.eof() && cin.good()) {
+				coeff[var] = n;
+			}
+			else {
+				cout << "Sorry, your entry wasn't valid. Exiting" << endl;
+				return 0;
+			}
 		}
-		else {
-			cout << "Sorry, your entry wasn't valid. Exiting" << endl;
-			return 0;
-		}
-		var++;
+		var++; // increment while loop counter
 	}
 
 	QuadraticFormula homework1;
+	homework1.setCoefficient('a', coeff[0]);
+	homework1.setCoefficient('b', coeff[1]);
+	homework1.setCoefficient('c', coeff[2]);
+	double a = homework1.getCoefficient('a');
+	double b = homework1.getCoefficient('b');
+	double c = homework1.getCoefficient('c');
+
 	// calculate 2*a
-	int twoA = homework1.twoA(coeff[0]);
+	double twoA = homework1.twoA(a);
 	// calculate b^2
-	int bSquare = homework1.bSquare(coeff[1]);
+	double bSquare = homework1.bSquare(b);
 	// calculate 4*a*c
-	int fourAC = homework1.fourAC(coeff[0], coeff[2]);
+	double fourAC = homework1.fourAC(a, c);
 	// determine number of real roots
 	int numRoots = homework1.numRoots(bSquare, fourAC);
 
@@ -40,13 +63,20 @@ int main() {
 	if (numRoots == 0) {
 		cout << "This formula has no real roots." << endl;
 	} else if (numRoots == 1) {
-		double root = homework1.oneRoot(twoA, coeff[1]);
-		cout << "This formula has one real root: " << fixed << setprecision(3) << root << "." << endl;
+		double root = homework1.oneRoot(twoA, b);
+		cout << "This formula has one real root: "; 
+		cout << fixed << setprecision(3) << root << "." << endl;
 	}
 	else {
-		double* roots = homework1.twoRoots(twoA, coeff[1], bSquare, fourAC);
-		cout << "This formula has two real roots: " << fixed << setprecision(3) << roots[0] << ", " << roots[1] << "." << endl;
+		double* roots = homework1.twoRoots(twoA, b, bSquare, fourAC);
+		cout << "This formula has two real roots: "; 
+		cout << fixed << setprecision(3) << roots[0] << ", " << roots[1] << "." << endl;
 	}
+
+	// tests of QuadraticFormula object with manual values
+	// cout << "The value of a is " << a << "." << endl;
+	// cout << "The value of b is " << b << "." << endl;
+	// cout << "The value of c is " << c << "." << endl;
 
 	return EXIT_SUCCESS;
 }
