@@ -18,5 +18,6 @@
 
 #include "MergeSort.h"
 #include "QuadraticFormula.h"
+#include "BubbleSort.h"
 
 using namespace std;
