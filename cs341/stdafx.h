@@ -16,8 +16,9 @@
 #include <vector>
 #include <array>
 
-#include "MergeSort.h"
+// #include "MergeSort.h"
 #include "QuadraticFormula.h"
-#include "BubbleSort.h"
+// #include "BubbleSort.h"
 
 using namespace std;
+using cover_cs341::QuadraticFormula;
