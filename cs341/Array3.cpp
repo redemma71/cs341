@@ -6,6 +6,7 @@
 
 #include <iostream> 
 #include <iomanip>
+#include "stdafx.h"
 using namespace std;
 
 int main () {
@@ -18,10 +19,12 @@ int main () {
 								// starts at 0 and is incremented by 1 each pass
 								// thru the loop. Loop terminates when i >= 5. 
 			*(Arr+i) = (i+1) * i;
+			// syntax: *(Arr+i) points to the index of i
+
 			}
 		cout << "First array is ";
 		for (j = 0; j < 5; j++)  // loop to display array elements
-			cout << *(Arr+j) << " ";
+			cout << "Address of j is " << int(&j) << " and value is " << *(Arr+j) << endl;
 		cout << endl;
 		cout << "Value in variable Arr points to Heap location " << (int) Arr << endl;
 		cout << "Location of i is " << int (&i) << endl;

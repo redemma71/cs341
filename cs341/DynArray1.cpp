@@ -8,6 +8,7 @@
 //   contents of the variable or expression are a reference to the field 
 //   which contains the actual data.
 
+#include "stdafx.h"
 #include <iostream> 
 #include <iomanip>
 using namespace std;
@@ -26,6 +27,7 @@ int main() {
 		if (temp != NULL){  // if heap available
 			cout << "Please enter an int number or EOF to terminate" << endl;
 			cin >> *(temp + count);  // get user's next input
+			// *(temp + count) syntax is called "base-and-displacement" referencing
 			if (!cin.eof() && cin.good()) {  // if valid input
 				for (int i = 0; i < count; i++) // enter int into temp array
 					*(temp + i) = *(Arr + i);
@@ -49,8 +51,9 @@ int main() {
 				//  another valid input
 	if (count > 0) {  // if positive count, display entries of input array
 		cout << "Input Array is: " << endl;
-		for(int j = 0; j < count; j++) // display array
-			cout << *(Arr + j) << " ";
+		for (int j = 0; j < count; j++) { // display array
+			cout << "Address: " << &Arr[j] << " - Value: " << *(Arr + j) << endl;
+		}
 		cout << endl;  // return cursor to lefthand position
 		}
 //	system("PAUSE"); // in case your system expects PAUSE before ending program
